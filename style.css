@@ -15,11 +15,11 @@ body {
 }
 
 .square {
-  width: 5vw;
-  height: 5vh;
+  width: 30px;
+  height: 30px;
   background: rgb(19, 18, 18);
-  margin: 2px;
-  transition: ease 2s;
+  margin: 1px;
+  transition: ease 1s;
 }
 
 .square:hover {

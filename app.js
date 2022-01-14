@@ -1,22 +1,21 @@
 const container = document.querySelector(".container");
 
 const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
-let hexColor = "#";
-
 let colors = [];
+
 function getRandomNumber() {
-  return Math.floor(Math.random() * hex.length);
+  return Math.floor(Math.random() * 16);
 }
 
-for (let i = 0; i < hex.length; ++i) {
+for (let i = 0; i < 16; ++i) {
+  let hexColor = "#";
   for (let i = 0; i < 6; i++) {
     hexColor += hex[getRandomNumber()];
   }
   colors.push(hexColor);
-  hexColor = "#";
 }
 
-const squares = 120;
+const squares = 450;
 
 for (let i = 0; i < squares; ++i) {
   const square = document.createElement("div");
@@ -27,11 +26,14 @@ for (let i = 0; i < squares; ++i) {
   square.addEventListener("mouseover", () => setColor(square));
   square.addEventListener("mouseout", () => removeColor(square));
 }
-
-const setColor = (tag) => {
+function setColor(tag) {
   tag.style.background = colors[getRandomNumber()];
-};
+}
 
-const removeColor = (tag) => {
+function removeColor(tag) {
   tag.style.background = "rgb(19, 18, 18)";
-};
+}
+// const removeColor = (tag) => {
+//   setTimeout(10000);
+//   tag.style.background = "rgb(19, 18, 18)";
+// };
